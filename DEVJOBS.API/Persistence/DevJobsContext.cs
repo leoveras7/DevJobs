@@ -18,7 +18,7 @@ namespace DEVJOBS.API.Persistence
             {
                 e.HasKey(jv => jv.Id);
                 //e.ToTable("tb_JobVacancies");  (caso queira definir um nome para a tabela.)
-
+                
                 e.HasMany(jv => jv.Applications).WithOne().HasForeignKey(ja => ja.IdJobVacancy).OnDelete(DeleteBehavior.Restrict);
             });
 
